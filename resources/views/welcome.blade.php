@@ -10,7 +10,7 @@
   <meta name="author" content="Danielle Coakley">
 
   <title>Online Student Attendance QR Code</title>
-  <link href="{{ asset ('app.css') }}" rel="stylesheet"/>
+  <link href="{{ asset ('css/app.css') }}" rel="stylesheet"/>
 
 </head>
 <body>
@@ -37,7 +37,7 @@
             </div>
 
         </div>
-               
+
                 <div class="form">
 
                 <form action="" method="post">
@@ -47,7 +47,7 @@
                     <button class="btnn"><a href="#">Login</a></button>
 
                     <p class="link">Don't have an account?<br><a href="signup.php">Sign up</a> here</a></p>
-                
+
 
                  </div>
                </div>
