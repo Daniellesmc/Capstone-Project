@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/')->name('login')->uses("App\Http\Controllers\Login\IndexController");
+
+Route::post('/sign-up')->name('sign-up.store')->uses('App\Http\Controllers\SignUp\StoreController');
