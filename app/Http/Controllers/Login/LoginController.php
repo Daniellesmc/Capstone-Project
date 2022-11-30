@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Login;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class IndexController extends Controller
+class LoginController extends Controller
 {
     public function __invoke()
     {
-        return view('welcome');
+        return view('Login.index');
     }
 }

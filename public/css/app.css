@@ -143,8 +143,10 @@ ul li a:hover {
     font-size: 60px;
 }
 .form {
-    width: 255px;
-    height: 380px;
+    display: flex;
+    flex-direction: column;
+    /* width: 255px; */
+    /* height: 380px; */
     background: linear-gradient(
         to top,
         rgba(0, 0, 0, 0.8) 50%,
@@ -192,12 +194,12 @@ ul li a:hover {
     font-family: Arial;
 }
 .btnn {
-    width: 245px;
-    height: 40px;
+    /* width: 245px; */
+    /* height: 40px; */
     background: #ff7200;
     border: none;
     margin-top: 30px;
-    font-size: 18px;
+    font-size: 14px;
     border-radius: 10px;
     cursor: pointer;
     color: #fff;
@@ -253,8 +255,8 @@ ul li a:hover {
 }
 input[type="text"],
 input[type="password"] {
-    width: 100%;
-    padding: 15px;
+    /* width: 100%; */
+    /* padding: 15px;
     margin: 5px 0 22px 0;
     display: inline-block;
     border-bottom: 1px solid #ff7200;
@@ -264,7 +266,7 @@ input[type="password"] {
     background: transparent;
     color: #fff;
     font-size: 15px;
-    font-family: sans-serif;
+    font-family: sans-serif; */
 }
 button {
     background-color: #ff7200;

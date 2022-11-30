@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/')->name('login')->uses("App\Http\Controllers\Login\IndexController");
+Route::get('/')->name('login')->uses("App\Http\Controllers\Login\LoginController");
 
-Route::post('/sign-up')->name('sign-up.store')->uses('App\Http\Controllers\SignUp\StoreController');
+Route::get('signup')->name('signup')->uses("App\Http\Controllers\SignUp\SignUpController");
+Route::post('signup')->name('signup.store')->uses('App\Http\Controllers\SignUp\SignUpController@store');
