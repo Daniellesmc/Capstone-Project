@@ -5,7 +5,7 @@
 
             <div class="menu">
                 <ul>
-                    <li><a class="active" href={{route('login')}}>HOME</a></li>
+                    <li><a class="active" href={{route('home')}}>HOME</a></li>
                     <li><a href="about.html">ABOUT</a></li>
                     <li><a href={{route('signup')}}>SIGN UP</a></li>
                     <!-- <li><a href="#">DESIGN</a></li>

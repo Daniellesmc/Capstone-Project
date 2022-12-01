@@ -10,22 +10,43 @@
     <meta name="author" content="Danielle Coakley">
 
     <title>Online Student Attendance QR Code</title>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
+    @vite(['resources/css/app.css', 'resources/css/tailwind.css', 'resources/js/app.js'])
+    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/tailwind.css') }}" rel="stylesheet" /> --}}
 
 </head>
 
-<body>
+<body class="h-full">
     <main class="main">
         @include('Shared.navbar')
 
 
-        <div class="form">
-            <form action="" method="post">
+        <div class="h-full flex flex-col items-center justify-center">
+            @if (session('success'))
+                <div class="alert alert-success w-96 h-12 bg-red-600 mb-5 text-center flex justify-center items-center"
+                    role="alert">
+                    <p class="text-lg">
+                        {{ session('success') }}
+                    </p>
+                </div>
+            @endif
+
+            <form class="form flex flex-col px-5 gap-5 items-center w-96 h-[500px] justify-center"
+                action="{{ route('login.post') }}" method="post">
+                @csrf
                 <h2>Login Here</h2>
-                <input type="email" name="email" placeholder="Enter Email Here">
-                <input type="password" name="" placeholder="Enter Password Here">
-                <button class="btnn"><a href="#">Login</a></button>
-                <p class="link">Don't have an account?<br><a href="signup.php">Sign up</a> here</a></p>
+                <input type="" required name="email" placeholder="Enter Email Here" value="dc@gmail.com">
+                <input type="password" required name="password" placeholder="Enter Password Here" value="secret">
+                <button type="submit" class="btnn">Login</button>
+
+                @if ($errors->has('email'))
+                    <span class="text-danger text-red-600 font-bold">{{ $errors->first('email') }}</span>
+                @endif
+                @if ($errors->has('password'))
+                    <span class="text-danger text-red-600 font-bold">{{ $errors->first('password') }}</span>
+                @endif
+                <p class="text-orange-500 text-center mt-5">Don't have an account?<br><a href="signup.php">Sign up</a>
+                    here</a></p>
             </form>
         </div>
     </main>

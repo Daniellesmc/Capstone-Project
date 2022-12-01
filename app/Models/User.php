@@ -26,6 +26,9 @@ class User extends Authenticatables implements AuthenticatableContract, Authoriz
         'email_verified_at'
     ];
 
+    public $incrementing = false;
+
+
     protected static function boot()
     {
         parent::boot();

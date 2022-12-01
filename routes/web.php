@@ -17,7 +17,21 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/')->name('login')->uses("App\Http\Controllers\Login\LoginController");
+// Dashboard
+Route::get('dashboard')->name('dashboard')->uses("App\Http\Controllers\Dashboard\DashboardController");
 
+// Login
+Route::get('/')->name('home')->uses("App\Http\Controllers\Home\HomeController");
+Route::post('login')->name('login')->uses("App\Http\Controllers\Login\LoginController@login");
+Route::post('post-login')->name('login.post')->uses("App\Http\Controllers\Login\LoginController@postLogin");
+
+// Logout
+Route::get('logout')->name('logout')->uses("App\Http\Controllers\Login\LoginController@logout");
+
+// Signup
 Route::get('signup')->name('signup')->uses("App\Http\Controllers\SignUp\SignUpController");
 Route::post('signup')->name('signup.store')->uses('App\Http\Controllers\SignUp\SignUpController@store');
+
+// Attendance
+Route::get('my-attendance')->name('attendance')->uses('App\Http\Controllers\Attendance\AttendanceController');
+Route::post('attendance')->name('attendance.store')->uses('App\Http\Controllers\Attendance\AttendanceController@store');
