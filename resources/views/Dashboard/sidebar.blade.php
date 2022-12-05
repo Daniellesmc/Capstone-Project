@@ -1,11 +1,14 @@
 <div class="hidden lg:flex lg:flex-shrink-0">
     <div class="flex w-64 flex-col">
         <!-- Sidebar component, swap this element with another sidebar if you like -->
-        <div class="flex min-h-0 flex-1 flex-col border-r border-gray-200 bg-gray-100">
+        <div class="flex min-h-0 flex-1 flex-col border-r border-white bg-white">
             <div class="flex flex-1 flex-col overflow-y-auto pt-5 pb-4">
                 <div class="flex flex-shrink-0 items-center px-4">
-                    <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                        alt="Your Company">
+                    <div class="icon">
+                        <h2 class="logo text-orange-600">JustAttend</h2>
+                    </div>
+                   <!-- <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" 
+                        alt="Your Company"> -->
                 </div>
                 <nav class="mt-5 flex-1" aria-label="Sidebar">
                     <div class="space-y-1 px-2">
@@ -39,7 +42,7 @@
                     <div class="ml-3">
                         <p class="text-base font-medium text-gray-700 group-hover:text-gray-900">
                             {{ $user?->first_name . ' ' . $user?->last_name }}</p>
-                        <a href="{{route('logout')}}" class="text-sm font-bold text-red-500 group-hover:text-yellow-500 w-0">Logout</a>
+                        <a href="{{route('logout')}}" class="text-sm font-bold text-orange-600 group-hover:text-yellow-500 w-0">Logout</a>
                     </div>
                 </div>
             </div>

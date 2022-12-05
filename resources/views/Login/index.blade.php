@@ -18,7 +18,7 @@
 
 <body class="h-full">
     <main class="main">
-        @include('Shared.navbar')
+       <!-- @include('Shared.navbar') -->
 
 
         <div class="h-full flex flex-col items-center justify-center">
@@ -45,8 +45,7 @@
                 @if ($errors->has('password'))
                     <span class="text-danger text-red-600 font-bold">{{ $errors->first('password') }}</span>
                 @endif
-                <p class="text-orange-500 text-center mt-5">Don't have an account?<br><a href="signup.php">Sign up</a>
-                    here</a></p>
+                <p class="text-orange-500 text-center mt-5">Don't have an account?<br><a href={{route('signup')}}>Sign Up</a></p>
             </form>
         </div>
     </main>
