@@ -35,10 +35,20 @@ Route::post('signup')->name('signup.store')->uses('App\Http\Controllers\SignUp\S
 // Attendance
 Route::get('my-attendance')->name('attendance')->uses('App\Http\Controllers\Attendance\AttendanceController');
 Route::post('attendance')->name('attendance.store')->uses('App\Http\Controllers\Attendance\AttendanceController@store');
+<<<<<<< HEAD
 Route::get('student-attendance')->name('student-attendance')->uses('App\Http\Controllers\Admin\StudentAttendanceController');
+Route::post('/store', [AttendanceController::class, 'store'])->name('store');
 
-// Calendar
+//Calendar
 Route::get('calendar')->name('calendar')->uses('App\Http\Controllers\Attendance\CalendarController');
+=======
+
+
+// Attendance
+//Route::get('my-attendance')->name('attendance')->uses('App\Http\Controllers\Attendance\AttendanceController');
+//Route::post('attendance')->name('attendance.store')->uses('App\Http\Controllers\Attendance\AttendanceController@store');
+
+>>>>>>> message
 
 //Email
 Route::get('send', [HomeController::class, "sendnotification"]);

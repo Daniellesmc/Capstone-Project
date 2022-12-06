@@ -9,14 +9,66 @@
 
 
     <title> QR Code</title>
+<<<<<<< HEAD
     {{-- @vite(['resources/css/app.css', 'resources/css/tailwind.css', 'resources/js/app.js'])
      <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
+=======
+    -@vite(['resources/css/app.css', 'resources/css/tailwind.css', 'resources/js/app.js'])
+   {{--  <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
+>>>>>>> message
     <link href="{{ asset('css/tailwind.css') }}" rel="stylesheet" /> --}}
 
 </head>
 
 <body>
+<<<<<<< HEAD
     <div class="flex flex-col">
+=======
+    
+<div class="flex min-h-full flex-col justify-center py-12 Absolute left-0">
+    <div class="mt-8 sm:mx-auto w-[400px] ">
+        <div class="bg-white py-8 shadow sm:rounded-lg px-7 Absolute left-0">
+            <h2 class="mt-6 mb-12 text-center text-3xl font-bold tracking-tight text-gray-900">Scan Your QR Code</h2>
+            {{-- Scanner --}}
+            <video id="preview"></video>
+            <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+            <script type="text/javascript">
+                let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+                scanner.addListener('scan', function (content) {
+                console.log(content);
+                 });
+                Instascan.Camera.getCameras().then(function (cameras) {
+                if (cameras.length > 0) {
+                    scanner.start(cameras[0]);
+                } else {
+                    console.error('No cameras found.');
+                }
+                }).catch(function (e) {
+                    console.error(e);
+                });
+            </script>
+
+            <p>Please place your qr code in front of camera to be scanned.</p>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="flex min-h-full flex-col justify-center py-10">
+    <div class="mt-8 sm:mx-auto w-[450px] Absolute right-0">
+        <div class="bg-white py-8 shadow sm:rounded-lg px-7">
+            <h2 class="mt-6 mb-12 text-center text-3xl font-bold tracking-tight text-gray-900">Log Your Attendance</h2>
+            <form class="space-y-6" action="{{ route('attendance.store') }}" method="POST">
+                @csrf
+                <div>
+                    <label for="text" class="block text-sm font-medium text-gray-700">First Name*</label>
+                    <div class="mt-1">
+                        <input id="first_name" name="first_name" required
+                            class="block w-full appearance-none rounded-md border border-gray-300 p-3 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+                    </div>
+                </div>
+>>>>>>> message
 
         <div class="flex min-h-full flex-col justify-center py-15">
             <div class="mt-8 sm:mx-auto w-[400px] ">
