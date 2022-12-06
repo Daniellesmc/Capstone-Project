@@ -9,48 +9,43 @@
 
 
     <title> QR Code</title>
-<<<<<<< HEAD
-    {{-- @vite(['resources/css/app.css', 'resources/css/tailwind.css', 'resources/js/app.js'])
-     <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
-=======
-    -@vite(['resources/css/app.css', 'resources/css/tailwind.css', 'resources/js/app.js'])
-   {{--  <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
->>>>>>> message
-    <link href="{{ asset('css/tailwind.css') }}" rel="stylesheet" /> --}}
+    @vite(['resources/css/app.css', 'resources/css/tailwind.css', 'resources/js/app.js'])
+
 
 </head>
 
 <body>
-<<<<<<< HEAD
-    <div class="flex flex-col">
-=======
-    
-<div class="flex min-h-full flex-col justify-center py-12 Absolute left-0">
-    <div class="mt-8 sm:mx-auto w-[400px] ">
-        <div class="bg-white py-8 shadow sm:rounded-lg px-7 Absolute left-0">
-            <h2 class="mt-6 mb-12 text-center text-3xl font-bold tracking-tight text-gray-900">Scan Your QR Code</h2>
-            {{-- Scanner --}}
-            <video id="preview"></video>
-            <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
-            <script type="text/javascript">
-                let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
-                scanner.addListener('scan', function (content) {
-                console.log(content);
-                 });
-                Instascan.Camera.getCameras().then(function (cameras) {
-                if (cameras.length > 0) {
-                    scanner.start(cameras[0]);
-                } else {
-                    console.error('No cameras found.');
-                }
-                }).catch(function (e) {
-                    console.error(e);
-                });
-            </script>
-            <p class="text-center underline underline-offset-1">Scan your QR Code</p>
+
+    <div class="flex gap-16 justify-center mx-auto items-center w-full pl-24">
+        <div class="flex min-h-full flex-col justify-center py-12 Absolute left-0">
+            <div class="mt-8 sm:mx-auto w-[400px] ">
+                <div class="bg-white py-8 shadow sm:rounded-lg px-7 Absolute left-0">
+                    <h2 class="mt-6 mb-12 text-center text-3xl font-bold tracking-tight text-gray-900">Scan Your QR Code
+                    </h2>
+                    {{-- Scanner --}}
+                    <video id="preview"></video>
+                    <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+                    <script type="text/javascript">
+                        let scanner = new Instascan.Scanner({
+                            video: document.getElementById('preview')
+                        });
+                        scanner.addListener('scan', function(content) {
+                            console.log(content);
+                        });
+                        Instascan.Camera.getCameras().then(function(cameras) {
+                            if (cameras.length > 0) {
+                                scanner.start(cameras[0]);
+                            } else {
+                                console.error('No cameras found.');
+                            }
+                        }).catch(function(e) {
+                            console.error(e);
+                        });
+                    </script>
+                    <p class="text-center underline underline-offset-1">Scan your QR Code</p>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
 
         <div class="flex min-h-full flex-col justify-center py-10">

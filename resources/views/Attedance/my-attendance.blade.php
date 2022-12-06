@@ -46,9 +46,11 @@
                     </div>
                 @endforeach
             </div> --}}
-            @include('Attedance.Student.calendar')
         </div>
     </main>
+    <div class="flex justify-end pl-16 w-96">
+        @include('Attedance.Student.calendar')
+    </div>
 </body>
 
 </html>

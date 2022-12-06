@@ -1,4 +1,4 @@
-<div class="container text-white">
+<div class="container text-white max-w-6xl ml-32">
     <div class="response"></div>
     <div id='calendar'></div>
 
@@ -14,8 +14,6 @@
             var calendar = $('#calendar').fullCalendar({
                 eventSources: [{
                     url: 'http://localhost:8000/calendar',
-                    display: 'background'
-
                 }],
                 eventColor: '#378006',
             });
