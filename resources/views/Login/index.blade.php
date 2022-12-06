@@ -18,7 +18,7 @@
 
 <body class="h-full">
     <main class="main">
-       @include('Shared.navbar')
+      {{--@include('Shared.navbar')--}} 
 
 
         <div class="h-full flex flex-col items-center justify-center">
