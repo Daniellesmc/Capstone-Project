@@ -27,7 +27,7 @@ class AttendanceController extends Controller
     {
         $user = Auth::user();
 
-        $already_logged_today = UserAttendance::whereDate('created_at', Carbon::today())
+        $already_logged_today = UserAttendance::where('user_id', $user->id)->whereDate('created_at', Carbon::today())
             ->exists();
 
         if ($already_logged_today) {

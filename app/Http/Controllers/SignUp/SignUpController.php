@@ -44,7 +44,7 @@ class SignUpController extends Controller
             'email' => $data['email'],
             'student_id' => substr(uniqid(), 5),
             'classroom_id' => $classroom->id,
-            'password' => $data['password'],
+            'password' => bcrypt($data['password']),
             'role' => 'student',
             'email_verified_at' => Carbon::now()
         ]);

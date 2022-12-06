@@ -31,8 +31,8 @@
         </h3>
         <div>
             <p><strong>Email:</strong> &nbsp;{{ $user->email }}</p>
-            <br />
-            <p><strong>Password:</strong> &nbsp;{{ $user->password }}</p>
+            {{-- <br />
+            <p><strong>Password:</strong> &nbsp;{{ $user->password }}</p> --}}
             <br />
             <p><strong>Student ID:</strong> &nbsp;{{ $user->student_id }}</p>
         </div>
