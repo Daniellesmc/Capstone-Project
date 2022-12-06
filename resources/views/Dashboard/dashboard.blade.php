@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <main class="main">
+    <main class="flex gap-20 main">
         <div class="flex h-full">
             <div class="flex h-full">
                 @if ($user->role === 'student')
@@ -42,6 +42,8 @@
                     @include('Dashboard.attendance-form')
                 </div>
             @endif
+        </div>
+        <div>
             @if ($user->role === 'admin')
                 @include('Attedance.Student.calendar')
             @endif

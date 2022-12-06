@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container text-white">
     <div class="response"></div>
     <div id='calendar'></div>
 

@@ -36,7 +36,7 @@ class AttendanceController extends Controller
         UserAttendance::create([...$data, 'user_id' => $user->id]);
 
        return redirect()->route('dashboard', ['user' => $user])->withSuccess('Attendance successfull logged!');
-    
+
         $already_logged_today = UserAttendance::where('user_id', $user->id)->whereDate('created_at', Carbon::today())
             ->exists();
 
@@ -44,7 +44,6 @@ class AttendanceController extends Controller
             return redirect()->route('dashboard', ['user' => $user])->with('error', 'You have already logged your attendance today');
         }
 
-        ]);
 
        UserAttendance::create([
             ...$data,
@@ -58,7 +57,7 @@ class AttendanceController extends Controller
             'student_id' => 'string',
             'first_name' => 'string',
             'last_name' => 'string',
-        
+
         ]);
 
 
@@ -78,4 +77,4 @@ class AttendanceController extends Controller
 
    }
 }
-    
+
