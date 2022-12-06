@@ -18,12 +18,12 @@
 
 <body class="h-full">
     <main class="main">
-       <!-- @include('Shared.navbar') -->
+       @include('Shared.navbar')
 
 
         <div class="h-full flex flex-col items-center justify-center">
             @if (session('success'))
-                <div class="alert alert-success w-96 h-12 bg-red-600 mb-5 text-center flex justify-center items-center"
+                <div class="alert alert-success w-96 h-12 bg-green-600 text-white mb-5 text-center flex justify-center items-center"
                     role="alert">
                     <p class="text-lg">
                         {{ session('success') }}

@@ -18,8 +18,10 @@ class User extends Authenticatables implements AuthenticatableContract, Authoriz
     use HasApiTokens, SoftDeletes, Authorizable, HasFactory, Notifiable;
 
     protected $fillable = [
+        'classroom_id',
         'first_name',
         'last_name',
+        'student_id',
         'email',
         'password',
         'role',
@@ -40,5 +42,9 @@ class User extends Authenticatables implements AuthenticatableContract, Authoriz
     protected $hidden = [
         'password',
         'remember_token',
+    ];
+
+    protected $rules = [
+        'email_address' => 'sometimes|required|email|unique:users'
     ];
 }

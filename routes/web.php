@@ -35,6 +35,7 @@ Route::post('signup')->name('signup.store')->uses('App\Http\Controllers\SignUp\S
 // Attendance
 Route::get('my-attendance')->name('attendance')->uses('App\Http\Controllers\Attendance\AttendanceController');
 Route::post('attendance')->name('attendance.store')->uses('App\Http\Controllers\Attendance\AttendanceController@store');
+Route::get('student-attendance')->name('student-attendance')->uses('App\Http\Controllers\Admin\StudentAttendanceController');
 
 //Email
 Route::get('send', [HomeController::class, "sendnotification"]);

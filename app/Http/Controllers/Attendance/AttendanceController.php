@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Attendance;
 
 use App\Http\Controllers\Controller;
 use App\Models\UserAttendance;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,14 +27,25 @@ class AttendanceController extends Controller
     {
         $user = Auth::user();
 
+        $already_logged_today = UserAttendance::whereDate('created_at', Carbon::today())
+            ->exists();
+
+        if ($already_logged_today) {
+            return redirect()->route('dashboard', ['user' => $user])->with('error', 'You have already logged your attendance today');
+        }
+
         $data = $request->validate([
+            'student_id' => 'string',
             'first_name' => 'string',
             'last_name' => 'string',
-            'student_id' => 'string',
         ]);
 
-        UserAttendance::create([...$data, 'user_id' => $user->id]);
+        UserAttendance::create([
+            ...$data,
+            'user_id' => $user->id,
+            'student_id' => $user->id,
+        ]);
 
-        return redirect()->route('dashboard', ['user' => $user])->withSuccess('Attendance successfull logged!');
+        return redirect()->route('dashboard', ['user' => $user])->withSuccess('Attendance successful logged!');
     }
 }

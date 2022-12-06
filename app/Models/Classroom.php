@@ -5,22 +5,19 @@ namespace App\Models;
 use App\Helpers\Identity;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class UserAttendance extends Model
+class Classroom extends Model
 {
     use HasFactory;
 
     public $incrementing = false;
 
     protected $fillable = [
-        'user_id',
-        'first_name',
-        'last_name',
-        'student_id',
+        'name',
+        'teacher_id',
     ];
 
-    protected $table = 'user_attendance';
+    protected $table = 'classrooms';
 
     protected static function boot()
     {
@@ -28,9 +25,5 @@ class UserAttendance extends Model
         static::creating(function ($value) {
             $value->id = Identity::createId();
         });
-    }
-
-    public function students() {
-        return $this->hasMany(User::class, 'user_id');
     }
 }
