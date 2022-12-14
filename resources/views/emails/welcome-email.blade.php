@@ -42,7 +42,7 @@
             {{--Generated QR Code--}}
 
             {{QrCode::size(250)->generate($user->first_name)}}
-
+            {{--<img src="{!!$message->embedData(QrCode::format('svg')->generate($user->first_name), 'QrCode.svg', 'image/svg+xml')!!}">--}}
 
         </div>
 
