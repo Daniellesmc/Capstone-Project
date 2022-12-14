@@ -11,7 +11,7 @@
 
     h3 {
         font-size: 18px;
-        color: #8C2434;
+        color: #ff7200;
     }
 </style>
 
@@ -35,6 +35,15 @@
             <p><strong>Password:</strong> &nbsp;{{ $user->password }}</p> --}}
             <br />
             <p><strong>Student ID:</strong> &nbsp;{{ $user->student_id }}</p>
+
+            <br>
+            <br>
+
+            {{--Generated QR Code--}}
+
+            {{QrCode::size(250)->generate($user->first_name)}}
+
+
         </div>
 
         <br>
@@ -42,13 +51,13 @@
 
         <div class="client-container info-div" style="margin-bottom: 5px;">
             <div style="margin: 10px 0px;">
-                <p>Login to see more details.</p>
+                <p>Attatched is the QR Code that you will use to log your attendance.</p>
             </div>
-            <div style="margin: 30px 0px;">
+            {{--<div style="margin: 30px 0px;">
                 <a href={{ env('APP_URL') }}
-                    style="border-radius: 5px; background-color: #333366; color: white;
+                    style="border-radius: 5px; background-color: #ff7200; color: white;
                padding: 10px 20px; text-transform: uppercase; font-weight: bold;">Login</a>
-            </div>
+            </div> --}}
         </div>
 
         <br>

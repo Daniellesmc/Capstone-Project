@@ -42,3 +42,6 @@ Route::get('calendar')->name('calendar')->uses('App\Http\Controllers\Attendance\
 
 //Email
 Route::get('send', [HomeController::class, "sendnotification"]);
+
+//Scanner
+//Route::get('/')->name('home')->uses("App\Http\Controllers\Home\HomeController");

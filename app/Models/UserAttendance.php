@@ -13,7 +13,7 @@ class UserAttendance extends Model
 
     public $incrementing = false;
 
-    protected $fillable = [
+    protected $guarded = [
         'user_id',
         'first_name',
         'last_name',

@@ -17,6 +17,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        //user 1 (teacher/admin)
         $random_id = substr(uniqid(), 5);
 
         $user_1 = User::create([
@@ -29,6 +30,8 @@ class UserSeeder extends Seeder
             'email_verified_at' => Carbon::now()
         ]);
 
+        //user 2 (user/student)
+
         $random_id_2 = substr(uniqid(), 5);
 
         $user_2 = User::create([
@@ -40,5 +43,7 @@ class UserSeeder extends Seeder
             'role' => 'student',
             'email_verified_at' => Carbon::now()
         ]);
+
+        User::insert($user_2);
     }
 }

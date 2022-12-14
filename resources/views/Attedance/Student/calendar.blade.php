@@ -2,6 +2,8 @@
     <div class="response"></div>
     <div id='calendar'></div>
 
+    {{--logs attendance in the calendar --}}
+
 
     <script>
         $(document).ready(function() {
